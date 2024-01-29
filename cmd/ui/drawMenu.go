@@ -2,8 +2,6 @@ package ui
 
 import (
 	"fmt"
-	"os"
-	"os/exec"
 )
 
 func DrawMenu() {
@@ -23,10 +21,4 @@ Exit 		  -> 0
 	fmt.Print("Make your choose: ")
 	fmt.Scan(&userMenuOption)
 
-}
-
-func ClearScreen() {
-	cmd := exec.Command("clear")
-	cmd.Stdout = os.Stdout
-	cmd.Run()
 }
