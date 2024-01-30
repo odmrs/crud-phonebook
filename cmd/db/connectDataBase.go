@@ -29,6 +29,19 @@ func ConnectDataBase() {
 	err = db.Ping()
 	CheckError(err)
 	fmt.Println("Connected")
+
+	// Create Table
+
+	createTableQuery := `
+           CREATE TABLE IF NOT EXISTS contacts(
+           id SERIAL PRIMARY KEY,
+           name TEXT,
+           phone TEXT);
+ `
+	_, err = db.Exec(createTableQuery)
+	CheckError(err)
+
+	fmt.Println("Table Created")
 }
 
 func CheckError(err error) {
