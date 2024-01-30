@@ -5,8 +5,9 @@ import (
 )
 
 func DrawMenu() {
-	ClearScreen()
-	fmt.Println(`---------- PHONEBOOK ----------
+	for {
+		ClearScreen()
+		fmt.Println(`---------- PHONEBOOK ----------
 
 Add Contact       -> 1
 View Contact      -> 2
@@ -16,5 +17,9 @@ View all Contacts -> 5
 Exit 		  -> 0
 
 	`)
-	HandleOptions()
+		opt := HandleOptions()
+		if opt == 0 {
+			break
+		}
+	}
 }

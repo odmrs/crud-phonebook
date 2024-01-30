@@ -6,7 +6,7 @@ import (
 	ui "github.com/odmrs/crud-phonebook/cmd/ui/allFunctions"
 )
 
-func HandleOptions() {
+func HandleOptions() int {
 	var userMenuOption int
 	fmt.Print("Choose a options: ")
 	fmt.Scan(&userMenuOption)
@@ -15,7 +15,7 @@ func HandleOptions() {
 	default:
 		ui.DrawDefaultScreen()
 	case 0:
-
+		fmt.Println("#TODO EXIT MENU")
 	case 1:
 		fmt.Println("#TODO ADD CONTACT")
 	case 2:
@@ -27,4 +27,5 @@ func HandleOptions() {
 	case 5:
 		fmt.Println("#TODO View all contacts")
 	}
+	return userMenuOption
 }
