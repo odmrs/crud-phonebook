@@ -5,7 +5,6 @@ import (
 )
 
 func DrawMenu() {
-	var userMenuOption int
 	ClearScreen()
 	fmt.Println(`---------- PHONEBOOK ----------
 
@@ -17,8 +16,5 @@ View all Contacts -> 5
 Exit 		  -> 0
 
 	`)
-
-	fmt.Print("Make your choose: ")
-	fmt.Scan(&userMenuOption)
-
+	HandleOptions()
 }
