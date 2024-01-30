@@ -1,6 +1,10 @@
 package ui
 
-import "fmt"
+import (
+	"fmt"
+
+	ui "github.com/odmrs/crud-phonebook/cmd/ui/allFunctions"
+)
 
 func HandleOptions() {
 	var userMenuOption int
@@ -9,9 +13,9 @@ func HandleOptions() {
 
 	switch userMenuOption {
 	default:
-		fmt.Println("TODO#ERROR")
+		ui.DrawDefaultScreen()
 	case 0:
-		fmt.Println("#Todo exiting menu")
+
 	case 1:
 		fmt.Println("#TODO ADD CONTACT")
 	case 2:
