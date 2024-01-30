@@ -29,12 +29,32 @@ func main() {
 
 	defer db.Close()
 
-	// checking db
+	// Conection
+	e := db.Ping()
+	CheckError(e)
+	fmt.Println("Created!!")
 
-	err = db.Ping()
+	// Create table
+
+	createTableQuery := `
+	CREATE TABLE IF NOT EXISTS contacts (
+	id SERIAL PRIMARY KEY,
+	name TEXT,
+	phone TEXT
+	)
+`
+	_, err = db.Exec(createTableQuery)
+	CheckError(err)
+	fmt.Println("Table Created")
+
+	// Insert data
+
+	insetTest := `insert into "contacts"("name", "phone") values('Marcos', '321313')`
+
+	_, err = db.Exec(insetTest)
 	CheckError(err)
 
-	fmt.Println("Connected!")
+	fmt.Println("Insert data!")
 }
 
 func CheckError(err error) {
