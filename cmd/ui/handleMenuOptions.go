@@ -6,26 +6,34 @@ import (
 	ui "github.com/odmrs/crud-phonebook/cmd/ui/allFunctions"
 )
 
-func HandleOptions() int {
-	var userMenuOption int
-	fmt.Print("Choose a options: ")
-	fmt.Scan(&userMenuOption)
+func HandleOptions() {
+	menu := DrawMenu()
+out:
+	for {
+		ClearScreen()
+		fmt.Print(menu)
+		var userMenuOption int
+		fmt.Print("Choose a options: ")
+		fmt.Scan(&userMenuOption)
 
-	switch userMenuOption {
-	default:
-		ui.DrawDefaultScreen()
-	case 0:
-		fmt.Println("#TODO EXIT MENU")
-	case 1:
-		fmt.Println("#TODO ADD CONTACT")
-	case 2:
-		fmt.Println("#TODO View just one contact")
-	case 3:
-		fmt.Println("#TODO Edit just one contact")
-	case 4:
-		fmt.Println("#TODO Delete a contact")
-	case 5:
-		fmt.Println("#TODO View all contacts")
+		switch userMenuOption {
+		default:
+			HandleOptions()
+		case 0:
+			fmt.Println("#TODO EXIT MENU")
+			break out
+		case 1:
+			ClearScreen()
+			ui.InsertOnDataBase()
+		case 2:
+			fmt.Println("#TODO View just one contact")
+		case 3:
+			fmt.Println("#TODO Edit just one contact")
+		case 4:
+			fmt.Println("#TODO Delete a contact")
+		case 5:
+			fmt.Println("#TODO View all contacts")
+		}
 	}
-	return userMenuOption
+	ui.DrawDefaultScreen()
 }
