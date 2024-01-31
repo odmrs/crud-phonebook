@@ -2,6 +2,8 @@ package ui
 
 import (
 	"fmt"
+
+	db "github.com/odmrs/crud-phonebook/cmd/db/all_functions"
 )
 
 func InsertOnDataBase() {
@@ -14,4 +16,5 @@ func InsertOnDataBase() {
 	fmt.Print("Enter the phone of user: ")
 	fmt.Scan(&phoneUser)
 	fmt.Printf("%v -> name | %v -> phone\n", nameUser, phoneUser)
+	db.AddContactsToDB(nameUser, phoneUser)
 }
