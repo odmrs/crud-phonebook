@@ -26,7 +26,8 @@ out:
 			ClearScreen()
 			ui.InsertOnDataBase()
 		case 2:
-			fmt.Println("#TODO View just one contact")
+			ClearScreen()
+			ui.ViewOnDataBase()
 		case 3:
 			fmt.Println("#TODO Edit just one contact")
 		case 4:
