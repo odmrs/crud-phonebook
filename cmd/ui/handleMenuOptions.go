@@ -2,13 +2,13 @@ package ui
 
 import (
 	"fmt"
+	"os"
 
 	ui "github.com/odmrs/crud-phonebook/cmd/ui/allFunctions"
 )
 
 func HandleOptions() {
 	menu := DrawMenu()
-out:
 	for {
 		ClearScreen()
 		fmt.Print(menu)
@@ -20,8 +20,11 @@ out:
 		default:
 			HandleOptions()
 		case 0:
-			fmt.Println("#TODO EXIT MENU")
-			break out
+			ClearScreen()
+			ui.ExitMenu()
+			TimeSleep()
+			ClearScreen()
+			os.Exit(0)
 		case 1:
 			ClearScreen()
 			ui.InsertOnDataBase()
@@ -41,5 +44,4 @@ out:
 			ui.ViewAllContactsOnDB()
 		}
 	}
-	ui.DrawDefaultScreen()
 }
