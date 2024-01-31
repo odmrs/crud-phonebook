@@ -31,7 +31,8 @@ out:
 		case 3:
 			fmt.Println("#TODO Edit just one contact")
 		case 4:
-			fmt.Println("#TODO Delete a contact")
+			ClearScreen()
+			ui.DeleteAUser()
 		case 5:
 			ClearScreen()
 			ui.ViewAllContactsOnDB()
