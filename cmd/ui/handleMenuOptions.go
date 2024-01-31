@@ -29,10 +29,13 @@ out:
 			ClearScreen()
 			ui.ViewOnDataBase()
 		case 3:
-			fmt.Println("#TODO Edit just one contact")
+			ClearScreen()
+			ui.EditAUser()
+			TimeSleep()
 		case 4:
 			ClearScreen()
 			ui.DeleteAUser()
+			TimeSleep()
 		case 5:
 			ClearScreen()
 			ui.ViewAllContactsOnDB()
