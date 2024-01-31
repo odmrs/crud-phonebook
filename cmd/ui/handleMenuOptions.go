@@ -33,7 +33,8 @@ out:
 		case 4:
 			fmt.Println("#TODO Delete a contact")
 		case 5:
-			fmt.Println("#TODO View all contacts")
+			ClearScreen()
+			ui.ViewAllContactsOnDB()
 		}
 	}
 	ui.DrawDefaultScreen()

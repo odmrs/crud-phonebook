@@ -8,7 +8,6 @@ import (
 
 func ViewOnDataBase() {
 	var nameUser string
-	//userMap := make(map[string]string)
 	fmt.Printf("----------- Show contact Menu ---------\n\n")
 
 	fmt.Print("Enter the name of user: ")
