@@ -37,9 +37,3 @@ func ConnectDataBase() (*sql.DB, error) {
 
 	return db, err
 }
-
-func CheckError(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
